@@ -6,7 +6,7 @@ const sendButton = document.getElementById('send-button');
 const sessionId = generateSessionId();
 
 function generateSessionId() {
-  return Math.random().toString(36).substr(2, 9);
+  return Math.random().toString(36).slice(2, 9);
 }
 
 sendButton.addEventListener('click', () => {
