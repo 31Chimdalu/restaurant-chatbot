@@ -56,7 +56,6 @@ Open `frontend/public/index.html` in a web browser to access the chatbot interfa
 - **User**: "1"
 - **Bot**: "Menu: 1: Pizza - $8.99, 2: Burger - $5.99, ..."
 
- there's still room for development as requirements not fully met yet
 
 ### Contribution
 

@@ -31,8 +31,18 @@ exports.handleMessage = (req, res) => {
       response = orderService.cancelOrder(sessionId);
       break;
     default:
-      response = responseMessages.invalidOption;
+      const itemNumber = parseInt(message, 10); // Parse the message as an integer
+        if (!isNaN(itemNumber)) {
+          const item = menuService.getMenuItemById(itemNumber);
+        if (item) {
+          response = orderService.addOrderItem(sessionId, item.id);
+        } else {
+          response = responseMessages.invalidOption;
+        }
+      } else {
+        response = responseMessages.invalidOption;
+      }
   }
-
+  
   res.json({ response });
-};
+}

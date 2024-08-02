@@ -38,8 +38,8 @@ function sendMessageToChatbot(message) {
   })
   .then(response => response.json())
   .then(data => {
-    const botMessages = chatBox.getElementsByClassName('bot-message');
-    botMessages[botMessages.length - 1].remove(); // Remove loading indicator
+    // const botMessages = chatBox.getElementsByClassName('bot-message');
+    // botMessages[botMessages.length - 1].remove(); // Remove loading indicator
     if (data.response) {
       addMessageToChat('Bot', data.response);
     }
@@ -51,4 +51,4 @@ function sendMessageToChatbot(message) {
 }
 
 // Initialize chat with a welcome message
-sendMessageToChatbot('');
+sendMessageToChatbot(alert( "Welcome to the Restaurant! Please select an option:\n1: Place an order\n99: Checkout order\n98: See order history\n97: See current order\n0: Cancel order"));
